@@ -7,10 +7,10 @@ namespace nightly.serilog.maui
     public static class SinkExtensions
     {
         public static LoggerConfiguration DebugConsole(
-            this LoggerSinkConfiguration loggerConfiguration,
+            this LoggerSinkConfiguration loggerConfiguration, bool enabled = true,
             IFormatProvider formatProvider = null)
         {
-            return loggerConfiguration.Sink(new DebugConsoleSink(formatProvider));
+            return loggerConfiguration.Sink(new DebugConsoleSink(formatProvider, enabled));
         }
     }
 }
